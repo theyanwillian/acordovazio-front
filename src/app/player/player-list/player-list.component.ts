@@ -9,7 +9,7 @@ import {PlayerService} from '../player.service';
     styleUrls: ['./player-list.component.css']
 })
 export class PlayerListComponent implements OnInit {
-    players: Player[] | undefined;
+    players: Player[];
     ordem: string = 'overall';
     // faEye = faEye;
     // faPenToSquare = faPenToSquare;

@@ -1,0 +1,15 @@
+nav {
+    background-color: #242526;
+}
+
+a {
+    color: #F2F2F2;
+}
+
+a:hover {
+    color: #0CF2C8;
+}
+
+a:focus {
+    color: #F20C60;
+}

@@ -1,0 +1,12 @@
+.cv-modal{
+    background-color: #212529;
+    color: #F2F2F2;
+}
+
+.col > .img-fluid{
+    max-width: 128px;
+}
+
+.img-player {
+    max-width: 128px;
+}

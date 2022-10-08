@@ -10,7 +10,7 @@ import {environment} from "../../environments/environment";
 export class PlayerService {
 
     // private baseURL = environment.baseUrl + 'player';
-    private baseURL = 'https://a-cor-do-vazio-rpg-backend.herokuapp.com/players';
+    private baseURL = environment.baseUrl + 'players';
 
     constructor(private httpClient: HttpClient) {
     }

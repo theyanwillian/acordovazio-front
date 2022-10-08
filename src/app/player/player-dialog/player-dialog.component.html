@@ -1,0 +1,113 @@
+<div class="modal-header">
+    <h4 class="modal-title">Novo Player!</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<form [formGroup]="createPlayerForm" (ngSubmit)="savePlayer()">
+    <div class="modal-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-9 mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" formControlName="nome">
+                </div>
+                <div class="col-3 mb-3">
+                    <label for="overall" class="form-label">Overall</label>
+                    <input type="text" class="form-control" id="overall" formControlName="overall">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 mb-3">
+                    <label for="idade" class="form-label">Idade</label>
+                    <input type="text" class="form-control" id="idade" formControlName="idade">
+                </div>
+                <div class="col-4 mb-3">
+                    <label for="peso" class="form-label">Peso</label>
+                    <input type="text" class="form-control" id="peso" formControlName="peso">
+                </div>
+                <div class="col-4 mb-3">
+                    <label for="altura" class="form-label">Altura</label>
+                    <input type="text" class="form-control" id="altura" formControlName="altura">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <select class="form-select" formControlName="classeOne">
+                        <option value="false">Classe Primária</option>
+                        <option value="assassino">Assassino</option>
+                        <option value="controlador">Controlador</option>
+                        <option value="lancador">Lançador</option>
+                        <option value="lutador">Lutador</option>
+                        <option value="tanque">Tanque</option>
+                    </select>
+                </div>
+                <div class="col-6 mb-3">
+                    <select class="form-select" formControlName="classeTwo">
+                        <option value="false">Classe Secundária</option>
+                        <option value="assassino">Assassino</option>
+                        <option value="controlador">Controlador</option>
+                        <option value="lancador">Lançador</option>
+                        <option value="lutador">Lutador</option>
+                        <option value="tanque">Tanque</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 mb-3">
+                    <label for="forca" class="form-label">For</label>
+                    <input type="text" class="form-control" id="forca" formControlName="forca">
+                </div>
+                <div class="col-3 mb-3">
+                    <label for="velocidade" class="form-label">Vel</label>
+                    <input type="text" class="form-control" id="velocidade" formControlName="velocidade">
+                </div>
+                <div class="col-3 mb-3">
+                    <label for="velocidadeCombate" class="form-label">VelC</label>
+                    <input type="text" class="form-control" id="velocidadeCombate" formControlName="velocidadeCombate">
+                </div>
+                <div class="col-3 mb-3">
+                    <label for="agilidade" class="form-label">Agi</label>
+                    <input type="text" class="form-control" id="agilidade" formControlName="agilidade">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 mb-3">
+                    <label for="resistencia" class="form-label">Res</label>
+                    <input type="text" class="form-control" id="resistencia" formControlName="resistencia">
+                </div>
+                <div class="col-3 mb-3">
+                    <label for="qiCombate" class="form-label">QiC</label>
+                    <input type="text" class="form-control" id="qiCombate" formControlName="qiCombate">
+                </div>
+                <div class="col-3 mb-3">
+                    <label for="estrategia" class="form-label">Estg</label>
+                    <input type="text" class="form-control" id="estrategia" formControlName="estrategia">
+                </div>
+                <div class="col-3 mb-3">
+                    <label for="observacao" class="form-label">Obs</label>
+                    <input type="text" class="form-control" id="observacao" formControlName="observacao">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 mb-3">
+                    <label for="estamina" class="form-label">Estm</label>
+                    <input type="text" class="form-control" id="estamina" formControlName="estamina">
+                </div>
+                <div class="col-3 mb-3">
+                    <label for="habMarciais" class="form-label">HabM</label>
+                    <input type="text" class="form-control" id="habMarciais" formControlName="habMarciais">
+                </div>
+                <div class="col-3 mb-3">
+                    <label for="maestria" class="form-label">Maes</label>
+                    <input type="text" class="form-control" id="maestria" formControlName="maestria">
+                </div>
+                <div class="col-3 mb-3">
+                    <label for="atqPotencial" class="form-label">AtqP</label>
+                    <input type="text" class="form-control" id="atqPotencial" formControlName="atqPotencial">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-outline-dark">Salvar</button>
+    </div>
+</form>

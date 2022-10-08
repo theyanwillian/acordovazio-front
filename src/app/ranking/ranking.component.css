@@ -1,0 +1,14 @@
+table th span{
+    cursor: pointer;
+}
+
+.filter {
+    color: #F20C60;
+    /*color: #0CF2C8;*/
+}
+
+td button {
+    --bs-btn-padding-y: 2px;
+    --bs-btn-padding-x: 7px;
+    --bs-btn-font-size: .75rem;
+}

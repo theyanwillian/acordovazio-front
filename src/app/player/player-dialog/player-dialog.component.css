@@ -1,0 +1,20 @@
+* {
+    background-color: #262728;
+    color: #F2F2F2;
+}
+
+input.ng-invalid.ng-touched {
+    border: 2px solid red;
+}
+
+input.ng-valid.ng-touched {
+    border: 2px solid green;
+}
+
+/*select.ng-valid.ng-touched {*/
+/*    border: 2px solid green;*/
+/*}*/
+
+/*select.ng-valid.ng-touched {*/
+/*    border: 2px solid green;*/
+/*}*/

@@ -1,0 +1,237 @@
+<h2>Ranking</h2>
+<div class="row">
+    <div class="table-responsive">
+        <table class="table table-hover table-dark">
+            <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">
+                    <span (click)="updateFilter('nome')">Nome </span>
+                    <fa-icon *ngIf="predicate != 'nome'" [icon]="faSort" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'nome' && reverse" [icon]="faSortUp" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'nome' && !reverse" [icon]="faSortDown" size="xs"></fa-icon>
+                </th>
+                <th scope="col" class="text-center" colspan="2">Classes</th>
+                <th scope="col" class="text-center" [class.filter]="predicate == 'forca'">
+                    <span (click)="updateFilter('forca')">For </span>
+                    <fa-icon *ngIf="predicate != 'forca'" [icon]="faSort" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'forca' && reverse" [icon]="faSortUp" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'forca' && !reverse" [icon]="faSortDown" size="xs"></fa-icon>
+                </th>
+                <th scope="col" class="text-center" [class.filter]="predicate == 'velocidade'">
+                    <span (click)="updateFilter('velocidade')">Vel </span>
+                    <fa-icon *ngIf="predicate != 'velocidade'" [icon]="faSort" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'velocidade' && reverse" [icon]="faSortUp" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'velocidade' && !reverse" [icon]="faSortDown" size="xs"></fa-icon>
+                </th>
+                <th scope="col" class="text-center" [class.filter]="predicate == 'velocidadeCombate'">
+                    <span (click)="updateFilter('velocidadeCombate')">VelC </span>
+                    <fa-icon *ngIf="predicate != 'velocidadeCombate'" [icon]="faSort" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'velocidadeCombate' && reverse" [icon]="faSortUp" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'velocidadeCombate' && !reverse" [icon]="faSortDown"
+                             size="xs"></fa-icon>
+                </th>
+                <th scope="col" class="text-center" [class.filter]="predicate == 'agilidade'">
+                    <span (click)="updateFilter('agilidade')">Agi </span>
+                    <fa-icon *ngIf="predicate != 'agilidade'" [icon]="faSort" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'agilidade' && reverse" [icon]="faSortUp" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'agilidade' && !reverse" [icon]="faSortDown" size="xs"></fa-icon>
+                </th>
+                <th scope="col" class="text-center" [class.filter]="predicate == 'resistencia'">
+                    <span (click)="updateFilter('resistencia')">Res </span>
+                    <fa-icon *ngIf="predicate != 'resistencia'" [icon]="faSort" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'resistencia' && reverse" [icon]="faSortUp" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'resistencia' && !reverse" [icon]="faSortDown" size="xs"></fa-icon>
+                </th>
+                <th scope="col" class="text-center" [class.filter]="predicate == 'qiCombate'">
+                    <span (click)="updateFilter('qiCombate')">QiC </span>
+                    <fa-icon *ngIf="predicate != 'qiCombate'" [icon]="faSort" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'qiCombate' && reverse" [icon]="faSortUp" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'qiCombate' && !reverse" [icon]="faSortDown" size="xs"></fa-icon>
+                </th>
+                <th scope="col" class="text-center" [class.filter]="predicate == 'estrategia'">
+                    <span (click)="updateFilter('estrategia')">Estg </span>
+                    <fa-icon *ngIf="predicate != 'estrategia'" [icon]="faSort" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'estrategia' && reverse" [icon]="faSortUp" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'estrategia' && !reverse" [icon]="faSortDown" size="xs"></fa-icon>
+                </th>
+                <th scope="col" class="text-center" [class.filter]="predicate == 'observacao'">
+                    <span (click)="updateFilter('observacao')">Obs </span>
+                    <fa-icon *ngIf="predicate != 'observacao'" [icon]="faSort" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'observacao' && reverse" [icon]="faSortUp" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'observacao' && !reverse" [icon]="faSortDown" size="xs"></fa-icon>
+                </th>
+                <th scope="col" class="text-center" [class.filter]="predicate == 'estamina'">
+                    <span (click)="updateFilter('estamina')">Estm </span>
+                    <fa-icon *ngIf="predicate != 'estamina'" [icon]="faSort" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'estamina' && reverse" [icon]="faSortUp" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'estamina' && !reverse" [icon]="faSortDown" size="xs"></fa-icon>
+                </th>
+                <th scope="col" class="text-center" [class.filter]="predicate == 'habMarciais'">
+                    <span (click)="updateFilter('habMarciais')">HabM </span>
+                    <fa-icon *ngIf="predicate != 'habMarciais'" [icon]="faSort" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'habMarciais' && reverse" [icon]="faSortUp" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'habMarciais' && !reverse" [icon]="faSortDown" size="xs"></fa-icon>
+                </th>
+                <th scope="col" class="text-center" [class.filter]="predicate == 'maestria'">
+                    <span (click)="updateFilter('maestria')">Maes </span>
+                    <fa-icon *ngIf="predicate != 'maestria'" [icon]="faSort" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'maestria' && reverse" [icon]="faSortUp" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'maestria' && !reverse" [icon]="faSortDown" size="xs"></fa-icon>
+                </th>
+                <th scope="col" class="text-center" [class.filter]="predicate == 'atqPotencial'">
+                    <span (click)="updateFilter('atqPotencial')">AtqP </span>
+                    <fa-icon *ngIf="predicate != 'atqPotencial'" [icon]="faSort" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'atqPotencial' && reverse" [icon]="faSortUp" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'atqPotencial' && !reverse" [icon]="faSortDown" size="xs"></fa-icon>
+                </th>
+                <th scope="col" class="text-center" [class.filter]="predicate == 'overall'">
+                    <span (click)="updateFilter('overall')">Ove </span>
+                    <fa-icon *ngIf="predicate != 'overall'" [icon]="faSort" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'overall' && reverse" [icon]="faSortUp" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'overall' && !reverse" [icon]="faSortDown" size="xs"></fa-icon>
+                </th>
+                <th scope="col" class="text-center">View</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let player of players; let i = index">
+                <th scope="row">{{i + 1}}º</th>
+                <td>{{player.nome}}</td>
+                <td><img *ngIf="player.classeOne" [src]="'/assets/img/' + player.classeOne + '.png'"
+                         style="width: 24px;" class="mx-auto d-block"></td>
+                <td><img *ngIf="player.classeTwo" [src]="'/assets/img/' + player.classeTwo + '.png'"
+                         style="width: 24px;" class="mx-auto d-block"></td>
+                <td><span *ngIf="player.forca"
+                          [class.atrib-c]="player.forca < 60"
+                          [class.atrib-b]="player.forca >= 60 && player.forca < 70"
+                          [class.atrib-a]="player.forca >= 70 && player.forca < 80"
+                          [class.atrib-s]="player.forca >= 80 && player.forca < 90"
+                          [class.atrib-ss]="player.forca >= 90 && player.forca < 100"
+                          [class.atrib-mitica]="player.forca >= 100" class="d-flex justify-content-center">
+                        {{player.forca}}
+                    </span></td>
+                <td><span *ngIf="player.velocidade"
+                          [class.atrib-c]="player.velocidade < 60"
+                          [class.atrib-b]="player.velocidade >= 60 && player.velocidade < 70"
+                          [class.atrib-a]="player.velocidade >= 70 && player.velocidade < 80"
+                          [class.atrib-s]="player.velocidade >= 80 && player.velocidade < 90"
+                          [class.atrib-ss]="player.velocidade >= 90 && player.velocidade < 100"
+                          [class.atrib-mitica]="player.velocidade >= 100" class="d-flex justify-content-center">
+                        {{player.velocidade}}
+                    </span></td>
+                <td><span *ngIf="player.velocidadeCombate"
+                          [class.atrib-c]="player.velocidadeCombate < 60"
+                          [class.atrib-b]="player.velocidadeCombate >= 60 && player.velocidadeCombate < 70"
+                          [class.atrib-a]="player.velocidadeCombate >= 70 && player.velocidadeCombate < 80"
+                          [class.atrib-s]="player.velocidadeCombate >= 80 && player.velocidadeCombate < 90"
+                          [class.atrib-ss]="player.velocidadeCombate >= 90 && player.velocidadeCombate < 100"
+                          [class.atrib-mitica]="player.velocidadeCombate >= 100" class="d-flex justify-content-center">
+                        {{player.velocidadeCombate}}
+                    </span></td>
+                <td><span *ngIf="player.agilidade"
+                          [class.atrib-c]="player.agilidade < 60"
+                          [class.atrib-b]="player.agilidade >= 60 && player.agilidade < 70"
+                          [class.atrib-a]="player.agilidade >= 70 && player.agilidade < 80"
+                          [class.atrib-s]="player.agilidade >= 80 && player.agilidade < 90"
+                          [class.atrib-ss]="player.agilidade >= 90 && player.agilidade < 100"
+                          [class.atrib-mitica]="player.agilidade >= 100" class="d-flex justify-content-center">
+                        {{player.agilidade}}
+                    </span></td>
+                <td><span *ngIf="player.resistencia"
+                          [class.atrib-c]="player.resistencia < 60"
+                          [class.atrib-b]="player.resistencia >= 60 && player.resistencia < 70"
+                          [class.atrib-a]="player.resistencia >= 70 && player.resistencia < 80"
+                          [class.atrib-s]="player.resistencia >= 80 && player.resistencia < 90"
+                          [class.atrib-ss]="player.resistencia >= 90 && player.resistencia < 100"
+                          [class.atrib-mitica]="player.resistencia >= 100" class="d-flex justify-content-center">
+                        {{player.resistencia}}
+                    </span></td>
+                <td><span *ngIf="player.qiCombate"
+                          [class.atrib-c]="player.qiCombate < 60"
+                          [class.atrib-b]="player.qiCombate >= 60 && player.qiCombate < 70"
+                          [class.atrib-a]="player.qiCombate >= 70 && player.qiCombate < 80"
+                          [class.atrib-s]="player.qiCombate >= 80 && player.qiCombate < 90"
+                          [class.atrib-ss]="player.qiCombate >= 90 && player.qiCombate < 100"
+                          [class.atrib-mitica]="player.qiCombate >= 100" class="d-flex justify-content-center">
+                        {{player.qiCombate}}
+                    </span></td>
+                <td><span *ngIf="player.estrategia"
+                          [class.atrib-c]="player.estrategia < 60"
+                          [class.atrib-b]="player.estrategia >= 60 && player.estrategia < 70"
+                          [class.atrib-a]="player.estrategia >= 70 && player.estrategia < 80"
+                          [class.atrib-s]="player.estrategia >= 80 && player.estrategia < 90"
+                          [class.atrib-ss]="player.estrategia >= 90 && player.estrategia < 100"
+                          [class.atrib-mitica]="player.estrategia >= 100" class="d-flex justify-content-center">
+                        {{player.estrategia}}
+                    </span></td>
+                <td><span *ngIf="player.observacao"
+                          [class.atrib-c]="player.observacao < 60"
+                          [class.atrib-b]="player.observacao >= 60 && player.observacao < 70"
+                          [class.atrib-a]="player.observacao >= 70 && player.observacao < 80"
+                          [class.atrib-s]="player.observacao >= 80 && player.observacao < 90"
+                          [class.atrib-ss]="player.observacao >= 90 && player.observacao < 100"
+                          [class.atrib-mitica]="player.observacao >= 100" class="d-flex justify-content-center">
+                        {{player.observacao}}
+                    </span></td>
+                <td><span *ngIf="player.estamina"
+                          [class.atrib-c]="player.estamina < 60"
+                          [class.atrib-b]="player.estamina >= 60 && player.estamina < 70"
+                          [class.atrib-a]="player.estamina >= 70 && player.estamina < 80"
+                          [class.atrib-s]="player.estamina >= 80 && player.estamina < 90"
+                          [class.atrib-ss]="player.estamina >= 90 && player.estamina < 100"
+                          [class.atrib-mitica]="player.estamina >= 100" class="d-flex justify-content-center">
+                        {{player.estamina}}
+                    </span></td>
+                <td><span *ngIf="player.habMarciais"
+                          [class.atrib-c]="player.habMarciais < 60"
+                          [class.atrib-b]="player.habMarciais >= 60 && player.habMarciais < 70"
+                          [class.atrib-a]="player.habMarciais >= 70 && player.habMarciais < 80"
+                          [class.atrib-s]="player.habMarciais >= 80 && player.habMarciais < 90"
+                          [class.atrib-ss]="player.habMarciais >= 90 && player.habMarciais < 100"
+                          [class.atrib-mitica]="player.habMarciais >= 100" class="d-flex justify-content-center">
+                        {{player.habMarciais}}
+                    </span></td>
+                <td><span *ngIf="player.maestria"
+                          [class.atrib-c]="player.maestria < 60"
+                          [class.atrib-b]="player.maestria >= 60 && player.maestria < 70"
+                          [class.atrib-a]="player.maestria >= 70 && player.maestria < 80"
+                          [class.atrib-s]="player.maestria >= 80 && player.maestria < 90"
+                          [class.atrib-ss]="player.maestria >= 90 && player.maestria < 100"
+                          [class.atrib-mitica]="player.maestria >= 100" class="d-flex justify-content-center">
+                        {{player.maestria}}
+                    </span></td>
+                <td><span *ngIf="player.atqPotencial"
+                          [class.atrib-c]="player.atqPotencial < 60"
+                          [class.atrib-b]="player.atqPotencial >= 60 && player.atqPotencial < 70"
+                          [class.atrib-a]="player.atqPotencial >= 70 && player.atqPotencial < 80"
+                          [class.atrib-s]="player.atqPotencial >= 80 && player.atqPotencial < 90"
+                          [class.atrib-ss]="player.atqPotencial >= 90 && player.atqPotencial < 100"
+                          [class.atrib-mitica]="player.atqPotencial >= 100" class="d-flex justify-content-center">
+                        {{player.atqPotencial}}
+                    </span></td>
+                <td><span *ngIf="player.overall"
+                          [class.atrib-c]="player.overall < 60"
+                          [class.atrib-b]="player.overall >= 60 && player.overall < 70"
+                          [class.atrib-a]="player.overall >= 70 && player.overall < 80"
+                          [class.atrib-s]="player.overall >= 80 && player.overall < 90"
+                          [class.atrib-ss]="player.overall >= 90 && player.overall < 100"
+                          [class.atrib-mitica]="player.overall >= 100" class="d-flex justify-content-center">
+                        {{player.overall}}
+                    </span></td>
+                <td>
+                    <button type="button" class="btn btn-outline-success mx-auto d-block"
+                            [routerLink]="['/', { outlets: { popup: 'player/detail/'+ player.id} }]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-eye-fill" viewBox="0 0 16 16">
+                            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                            <path
+                                d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                        </svg>
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,289 @@
+<div class="modal-content cv-modal">
+    <div class="modal-header d-block">
+        <div class="row">
+            <div class="col-9">
+                <h4 class="modal-title fw-bold">{{player.nome}}</h4>
+            </div>
+            <div class="col-3 d-flex justify-content-center align-items-center">
+                <span class="ms-auto overall"
+                      [class.ov-c]="player.overall < 60"
+                      [class.ov-b]="player.overall >= 60 && player.overall < 70"
+                      [class.ov-a]="player.overall >= 70 && player.overall < 80"
+                      [class.ov-s]="player.overall >= 80 && player.overall < 90"
+                      [class.ov-ss]="player.overall >= 90 && player.overall < 100"
+                      [class.ov-mitica]="player.overall >= 100">
+                    {{player.overall}}
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body">
+        <div class="container">
+            <div class="row mb-3">
+                <div class="col-12 d-flex justify-content-center">
+                    <img src="assets/player/muramassa.jpeg" class="img-fluid img-player">
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-12 d-flex justify-content-around">
+                    <h5>Idade: {{player.idade}}</h5>
+                    <h5>Peso: {{player.peso}}</h5>
+                    <h5>Altura: {{player.altura}}</h5>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <img [src]="'/assets/img/' + player.classeOne + '.png'" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <span>Assassino</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <img [src]="'/assets/img/' + player.classeTwo + '.png'" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <span>Controlador</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-2">
+                    <div class="row">
+                        <div class="col display-5 mx-2 border-bottom border-4"
+                             [class.atrib-c]="player.forca < 60"
+                             [class.atrib-b]="player.forca >= 60 && player.forca < 70"
+                             [class.atrib-a]="player.forca >= 70 && player.forca < 80"
+                             [class.atrib-s]="player.forca >= 80 && player.forca < 90"
+                             [class.atrib-ss]="player.forca >= 90 && player.forca < 100"
+                             [class.atrib-mitica]="player.forca >= 100">
+                            {{player.forca}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <span>Força</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <div class="row">
+                        <div class="col display-5 mx-2 border-bottom border-4"
+                             [class.atrib-c]="player.velocidade < 60"
+                             [class.atrib-b]="player.velocidade >= 60 && player.velocidade < 70"
+                             [class.atrib-a]="player.velocidade >= 70 && player.velocidade < 80"
+                             [class.atrib-s]="player.velocidade >= 80 && player.velocidade < 90"
+                             [class.atrib-ss]="player.velocidade >= 90 && player.velocidade < 100"
+                             [class.atrib-mitica]="player.velocidade >= 100">
+                            {{player.velocidade}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <span>Velocidade</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <div class="row">
+                        <div class="col display-5 mx-2 border-bottom border-4"
+                             [class.atrib-c]="player.velocidadeCombate < 60"
+                             [class.atrib-b]="player.velocidadeCombate >= 60 && player.velocidadeCombate < 70"
+                             [class.atrib-a]="player.velocidadeCombate >= 70 && player.velocidadeCombate < 80"
+                             [class.atrib-s]="player.velocidadeCombate >= 80 && player.velocidadeCombate < 90"
+                             [class.atrib-ss]="player.velocidadeCombate >= 90 && player.velocidadeCombate < 100"
+                             [class.atrib-mitica]="player.velocidadeCombate >= 100">
+                            {{player.velocidadeCombate}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <span>Velocidade C.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-2">
+                    <div class="row">
+                        <div class="col display-5 mx-2 border-bottom border-4"
+                             [class.atrib-c]="player.agilidade < 60"
+                             [class.atrib-b]="player.agilidade >= 60 && player.agilidade < 70"
+                             [class.atrib-a]="player.agilidade >= 70 && player.agilidade < 80"
+                             [class.atrib-s]="player.agilidade >= 80 && player.agilidade < 90"
+                             [class.atrib-ss]="player.agilidade >= 90 && player.agilidade < 100"
+                             [class.atrib-mitica]="player.agilidade >= 100">
+                            {{player.agilidade}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <span>Agilidade</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <div class="row">
+                        <div class="col display-5 mx-2 border-bottom border-4"
+                             [class.atrib-c]="player.resistencia < 60"
+                             [class.atrib-b]="player.resistencia >= 60 && player.resistencia < 70"
+                             [class.atrib-a]="player.resistencia >= 70 && player.resistencia < 80"
+                             [class.atrib-s]="player.resistencia >= 80 && player.resistencia < 90"
+                             [class.atrib-ss]="player.resistencia >= 90 && player.resistencia < 100"
+                             [class.atrib-mitica]="player.resistencia >= 100">
+                            {{player.resistencia}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <span>Resistência</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <div class="row">
+                        <div class="col display-5 mx-2 border-bottom border-4"
+                             [class.atrib-c]="player.qiCombate < 60"
+                             [class.atrib-b]="player.qiCombate >= 60 && player.qiCombate < 70"
+                             [class.atrib-a]="player.qiCombate >= 70 && player.qiCombate < 80"
+                             [class.atrib-s]="player.qiCombate >= 80 && player.qiCombate < 90"
+                             [class.atrib-ss]="player.qiCombate >= 90 && player.qiCombate < 100"
+                             [class.atrib-mitica]="player.qiCombate >= 100">
+                            {{player.qiCombate}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <span>Qi em Combate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-2">
+                    <div class="row">
+                        <div class="col display-5 mx-2 border-bottom border-4"
+                             [class.atrib-c]="player.estrategia < 60"
+                             [class.atrib-b]="player.estrategia >= 60 && player.estrategia < 70"
+                             [class.atrib-a]="player.estrategia >= 70 && player.estrategia < 80"
+                             [class.atrib-s]="player.estrategia >= 80 && player.estrategia < 90"
+                             [class.atrib-ss]="player.estrategia >= 90 && player.estrategia < 100"
+                             [class.atrib-mitica]="player.estrategia >= 100">
+                            {{player.estrategia}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <span>Estratégia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <div class="row">
+                        <div class="col display-5 mx-2 border-bottom border-4"
+                             [class.atrib-c]="player.observacao < 60"
+                             [class.atrib-b]="player.observacao >= 60 && player.observacao < 70"
+                             [class.atrib-a]="player.observacao >= 70 && player.observacao < 80"
+                             [class.atrib-s]="player.observacao >= 80 && player.observacao < 90"
+                             [class.atrib-ss]="player.observacao >= 90 && player.observacao < 100"
+                             [class.atrib-mitica]="player.observacao >= 100">
+                            {{player.observacao}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <span>Observação</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <div class="row">
+                        <div class="col display-5 mx-2 border-bottom border-4"
+                             [class.atrib-c]="player.estamina < 60"
+                             [class.atrib-b]="player.estamina >= 60 && player.estamina < 70"
+                             [class.atrib-a]="player.estamina >= 70 && player.estamina < 80"
+                             [class.atrib-s]="player.estamina >= 80 && player.estamina < 90"
+                             [class.atrib-ss]="player.estamina >= 90 && player.estamina < 100"
+                             [class.atrib-mitica]="player.estamina >= 100">
+                            {{player.estamina}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <span>Estamina</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-2">
+                    <div class="row">
+                        <div class="col display-5 mx-2 border-bottom border-4"
+                             [class.atrib-c]="player.habMarciais < 60"
+                             [class.atrib-b]="player.habMarciais >= 60 && player.habMarciais < 70"
+                             [class.atrib-a]="player.habMarciais >= 70 && player.habMarciais < 80"
+                             [class.atrib-s]="player.habMarciais >= 80 && player.habMarciais < 90"
+                             [class.atrib-ss]="player.habMarciais >= 90 && player.habMarciais < 100"
+                             [class.atrib-mitica]="player.habMarciais >= 100">
+                            {{player.habMarciais}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <span>Hab. Marciais</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <div class="row">
+                        <div class="col display-5 mx-2 border-bottom border-4"
+                             [class.atrib-c]="player.maestria < 60"
+                             [class.atrib-b]="player.maestria >= 60 && player.maestria < 70"
+                             [class.atrib-a]="player.maestria >= 70 && player.maestria < 80"
+                             [class.atrib-s]="player.maestria >= 80 && player.maestria < 90"
+                             [class.atrib-ss]="player.maestria >= 90 && player.maestria < 100"
+                             [class.atrib-mitica]="player.maestria >= 100">
+                            {{player.maestria}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <span>Maestria</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <div class="row">
+                        <div class="col display-5 mx-2 border-bottom border-4"
+                             [class.atrib-c]="player.atqPotencial < 60"
+                             [class.atrib-b]="player.atqPotencial >= 60 && player.atqPotencial < 70"
+                             [class.atrib-a]="player.atqPotencial >= 70 && player.atqPotencial < 80"
+                             [class.atrib-s]="player.atqPotencial >= 80 && player.atqPotencial < 90"
+                             [class.atrib-ss]="player.atqPotencial >= 90 && player.atqPotencial < 100"
+                             [class.atrib-mitica]="player.atqPotencial >= 100">
+                            {{player.atqPotencial}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <span>Atq. Potencial</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light" (click)="activeModal.close('Close click')">Close</button>
+    </div>
+</div>

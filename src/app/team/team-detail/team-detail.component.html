@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-xs-12 d-flex justify-content-between">
+        <h3>{{team.name}}</h3>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Manage Team
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Add Player</a></li>
+                <li><a class="dropdown-item" href="#">Edit Team</a></li>
+                <li><a class="dropdown-item" href="#">Delete Team</a></li>
+            </ul>
+        </div>
+    </div>
+    <h4>Coach: {{team.coach}}</h4>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let player of team.players">
+                {{ player.nome }} - {{ player.overall }}
+            </li>
+        </ul>
+    </div>
+</div>
+

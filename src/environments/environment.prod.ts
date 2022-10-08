@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+    production: true,
+    baseUrl: 'http://a-cor-do-vazio-rpg-backend.herokuapp.com/'
 };

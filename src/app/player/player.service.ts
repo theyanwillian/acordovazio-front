@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {Player} from './player.model';
 import {environment} from "../../environments/environment";
 
@@ -9,6 +9,7 @@ import {environment} from "../../environments/environment";
 })
 export class PlayerService {
 
+    reloadPage = new Subject<boolean>();
     private baseURL = environment.baseUrl + 'players';
 
     constructor(private httpClient: HttpClient) {

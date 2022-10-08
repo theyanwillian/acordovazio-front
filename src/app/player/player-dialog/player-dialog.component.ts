@@ -52,10 +52,16 @@ export class PlayerDialogComponent implements OnInit {
         this.player = this.reactFormsToEntity(this.player, this.createPlayerForm.value);
         if (this.player.id !== undefined) {
             console.log('temid');
-            this.playerService.updatePlayer(this.player).subscribe(() => { this.activeModal.close() });
+            this.playerService.updatePlayer(this.player).subscribe(() => {
+                this.activeModal.close();
+                this.playerService.reloadPage.next(true);
+            });
         } else {
             console.log('semid');
-            this.playerService.createPlayer(this.player).subscribe(() => { this.activeModal.close() });
+            this.playerService.createPlayer(this.player).subscribe(() => {
+                this.activeModal.close();
+                this.playerService.reloadPage.next(true);
+            });
         }
     }
 

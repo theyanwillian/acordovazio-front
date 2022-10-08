@@ -30,11 +30,11 @@
                         <button class="btn btn-sm btn-primary me-1" [routerLink]="['/', { outlets: { popup: 'player/detail/'+ player.id} }]">
                             <fa-icon [icon]="faEye"></fa-icon>
                         </button>
-                        <button class="btn btn-sm btn-primary" [routerLink]="['/', { outlets: { popup: 'player/update/'+ player.id} }]">
+                        <button class="btn btn-sm btn-primary me-1" [routerLink]="['/', { outlets: { popup: 'player/update/'+ player.id} }]">
                             <fa-icon [icon]="faPenToSquare"></fa-icon>
                         </button>
-                        <button class="btn btn-sm btn-primary" [routerLink]="['/', { outlets: { popup: 'player/update/'+ player.id} }]">
-                            <fa-icon [icon]="faPenToSquare"></fa-icon>
+                        <button class="btn btn-sm btn-primary" (click)="deletePlayer(player.id)">
+                            <fa-icon [icon]="faTrash"></fa-icon>
                         </button>
                     </div>
                 </div>

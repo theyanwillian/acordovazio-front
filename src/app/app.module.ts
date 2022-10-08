@@ -22,6 +22,8 @@ import {TeamListComponent} from "./team/team-list/team-list.component";
 import {TeamDialogComponent} from "./team/team-dialog/team-dialog.component";
 import {TeamDetailComponent} from "./team/team-detail/team-detail.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
+import {TeamService} from "./team/team.service";
+import {PlayerService} from "./player/player.service";
 
 @NgModule({
     declarations: [
@@ -50,7 +52,10 @@ import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
         ReactiveFormsModule,
         FontAwesomeModule
     ],
-    providers: [],
+    providers: [
+        TeamService,
+        PlayerService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

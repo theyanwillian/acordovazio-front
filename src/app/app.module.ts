@@ -8,12 +8,16 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {AppComponent} from './app.component';
 import {NavbarTopComponent} from "./navbar-top/navbar-top.component";
 import {HomeComponent} from "./home/home.component";
+import {PlayerComponent} from "./player/player.component";
+import {PlayerListComponent} from "./player/player-list/player-list.component";
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
-        NavbarTopComponent
+        NavbarTopComponent,
+        PlayerComponent,
+        PlayerListComponent
     ],
     imports: [
         BrowserModule,

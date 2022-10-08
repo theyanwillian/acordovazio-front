@@ -1,1 +1,117 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    --bs-modal-bg: '' !important;
+    --bs-modal-border-color: '' !important;
+}
+
+h2 {
+    color: #F2F2F2;
+    padding-left: 3px;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    background-color: #262728;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #242526;
+    color: #F2F2F2;
+}
+
+.footer a, .footer span {
+    color: #F2F2F2;
+}
+
+/*-------------------------------------------------- */
+.card {
+    background-color: #212529;
+    color: #F2F2F2;
+}
+
+
+.atrib-c {
+    color: #d95c0f;
+    font-weight: 900;
+    padding: 0px 5px 0px 5px;
+    text-align: center;
+}
+
+.atrib-b {
+    color: #c92a2a;
+    font-weight: 900;
+    padding: 0px 5px 0px 5px;
+    text-align: center;
+}
+
+.atrib-a {
+    color: rgb(222, 173, 83);
+    font-weight: 900;
+    padding: 0px 5px 0px 5px;
+    text-align: center;
+}
+
+.atrib-s {
+    color: #66a80f;
+    font-weight: 900;
+    padding: 0px 5px 0px 5px;
+    text-align: center;
+}
+
+.atrib-ss {
+    color: #0c8539;
+    font-weight: 900;
+    padding: 0px 5px 0px 5px;
+    text-align: center;
+}
+
+.atrib-mitica {
+    color: #5f63e1;
+    font-weight: 900;
+    padding: 0px 5px 0px 5px;
+    text-align: center;
+}
+
+.overall {
+    font-size: 20px;
+    font-weight: 900;
+    color: #F2F2F2;
+    text-align: center;
+    padding: 2px 7px 2px 7px;
+    border-radius: 5px;
+    vertical-align : middle;
+}
+
+.overall.ov-c {
+    background-color: #d95c0f;
+}
+.overall.ov-b {
+    background-color: #c92a2a;
+}
+.overall.ov-a {
+    background-color: rgb(222, 173, 83);
+}
+.overall.ov-s {
+    background-color: #66a80f;
+}
+.overall.ov-ss {
+    background-color: #0c8539;
+}
+.overall.ov-mitica {
+    background-color: #5f63e1;
+}

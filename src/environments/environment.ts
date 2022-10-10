@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    baseUrl: 'http://a-cor-do-vazio-rpg-backend.herokuapp.com/'
+    baseUrl: 'http://localhost:8080/'
 };
 
 /*

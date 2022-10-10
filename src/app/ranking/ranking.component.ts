@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PlayerService} from '../player/player.service';
 import {Player} from '../player/player.model';
-import {faSort, faSortUp, faSortDown, faEye} from '@fortawesome/free-solid-svg-icons';
+import {faSort, faSortUp, faSortDown, faEye, faSpinner} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'app-ranking',
@@ -15,7 +15,13 @@ export class RankingComponent implements OnInit {
     faSort = faSort;
     faSortUp = faSortUp;
     faSortDown = faSortDown;
-    faEye = faEye
+    faEye = faEye;
+    faSpinner = faSpinner;
+    filterNome = '';
+    filterClasse = '';
+    loading = false;
+    currentTimeout = null;
+    classes = ['Lançador', 'Lutador', 'Controlador', 'Assassino', 'Tanque'];
 
     constructor(
         private playerService: PlayerService
@@ -30,7 +36,6 @@ export class RankingComponent implements OnInit {
         this.playerService.getPlayersList({
             sort: this.sort()
         }).subscribe(data => {
-            console.log(data);
             this.players = data;
         });
     }
@@ -49,5 +54,30 @@ export class RankingComponent implements OnInit {
             this.reverse = false;
             this.getAllPlayers();
         }
+    }
+
+    getAllPlayersfilter() {
+        console.log("filter");
+        this.loading = false;
+        this.playerService.getPlayersListFilter({
+            sort: this.sort(),
+            nome: this.filterNome,
+            classe: this.filterClasse,
+        }).subscribe(data => {
+            this.players = data;
+        });
+    }
+
+    onKeyUp() {
+        this.loading = true;
+        this.cancelTimeout();
+        this.currentTimeout = setTimeout(() => {
+            this.getAllPlayersfilter();
+        }, 2000);
+    }
+
+    cancelTimeout(): void {
+        clearTimeout(this.currentTimeout);
+        this.currentTimeout = undefined;
     }
 }

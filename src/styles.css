@@ -38,6 +38,10 @@ body {
     color: #F2F2F2;
 }
 
+label {
+    color: #F2F2F2;
+}
+
 /*-------------------------------------------------- */
 .card {
     background-color: #212529;
@@ -94,24 +98,34 @@ body {
     text-align: center;
     padding: 2px 7px 2px 7px;
     border-radius: 5px;
-    vertical-align : middle;
+    vertical-align: middle;
 }
 
 .overall.ov-c {
     background-color: #d95c0f;
 }
+
 .overall.ov-b {
     background-color: #c92a2a;
 }
+
 .overall.ov-a {
     background-color: rgb(222, 173, 83);
 }
+
 .overall.ov-s {
     background-color: #66a80f;
 }
+
 .overall.ov-ss {
     background-color: #0c8539;
 }
+
 .overall.ov-mitica {
     background-color: #5f63e1;
+}
+
+
+th, td {
+    white-space: nowrap !important;
 }

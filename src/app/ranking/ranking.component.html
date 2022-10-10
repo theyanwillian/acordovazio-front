@@ -1,4 +1,31 @@
-<h2>Ranking</h2>
+<div class="row my-2">
+    <div class="col-12 col-md-3 align-self-center">
+        <h2>Ranking</h2>
+    </div>
+    <div class="col-12 col-md-3 offset-md-3">
+        <div class="form-group">
+            <label for="buscaNome"><i class="fa fa-search"></i> Filtrar por Nome</label>
+            <div class="d-flex position-relative align-items-center justify-content-end">
+                <input type="text" class="form-control" id="buscaNome"
+                       [(ngModel)]="filterNome"
+                       (keyup)="onKeyUp()">
+                <div class="position-absolute pe-2">
+                    <fa-icon *ngIf="loading" [icon]="faSpinner" [spin]="true"></fa-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-3">
+        <div class="form-group">
+            <label for="buscaClasse1"><i class="fa fa-search"></i> Filtrar por Classe</label>
+            <select id="buscaClasse1" (change)="getAllPlayersfilter()" class="form-select" [(ngModel)]="filterClasse">
+                <option value="" selected>Classes</option>
+                <option value="{{classe}}" *ngFor="let classe of classes"
+                        class="form-control">{{classe}}</option>
+            </select>
+        </div>
+    </div>
+</div>
 <div class="row">
     <div class="table-responsive">
         <table class="table table-hover table-dark">

@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from "@angular/common/http";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 import {AppComponent} from './app.component';
 import {NavbarTopComponent} from "./navbar-top/navbar-top.component";
@@ -50,7 +50,8 @@ import {PlayerService} from "./player/player.service";
         AppRoutingModule,
         NgbModule,
         ReactiveFormsModule,
-        FontAwesomeModule
+        FontAwesomeModule,
+        FormsModule
     ],
     providers: [
         TeamService,

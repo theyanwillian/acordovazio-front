@@ -4,6 +4,8 @@ import {Observable, Subject} from 'rxjs';
 import {Player} from './player.model';
 import {environment} from "../../environments/environment";
 
+import {createRequestOption} from '../shared/model/request-util';
+
 @Injectable({
     providedIn: 'root'
 })
@@ -17,6 +19,11 @@ export class PlayerService {
 
     getPlayersList(req: any): Observable<Player[]> {
         return this.httpClient.get<Player[]>(`${this.baseURL}`, {params: req});
+    }
+
+    getPlayersListFilter(req: any): Observable<Player[]> {
+        const options = createRequestOption(req);
+        return this.httpClient.get<Player[]>(`${this.baseURL}/filters`, {params: options});
     }
 
     createPlayer(player: Player): Observable<Object> {

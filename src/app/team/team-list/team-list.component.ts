@@ -17,6 +17,14 @@ export class TeamListComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.teams = this.teamService.getTeams();
+        this.getAllTeams();
+    }
+
+    getAllTeams() {
+        this.teamService.getTeamsList({
+            // filter: this.ordem
+        }).subscribe(data => {
+            this.teams = data;
+        });
     }
 }

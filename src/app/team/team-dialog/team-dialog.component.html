@@ -1,10 +1,117 @@
-<ol class="list-group">
-    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-    (click)="onSelected()">
-        <div class="ms-2 me-auto">
-            <div class="fw-bold">{{team.name}}</div>
-            Coach: {{team.coach}}
+<div class="modal-header">
+    <h4 *ngIf="!team.id" class="modal-title">Novo Team!</h4>
+    <h4 *ngIf="team.id" class="modal-title">Edit {{team.name}}!</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<form [formGroup]="teamForm" (ngSubmit)="saveTeam()">
+    <div class="modal-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label class="form-label m-0">Nome</label>
+                    <input type="text" class="form-control" id="name" formControlName="name">
+                </div>
+                <div class="col-6 mb-3">
+                    <label class="form-label m-0">Coach</label>
+                    <input type="text" class="form-control" id="coach" formControlName="coach">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label class="form-label m-0">Overall</label>
+                    <input type="text" class="form-control" id="overall" formControlName="overall">
+                </div>
+                <div class="col-6 mb-3">
+                    <label class="form-label m-0">Característica</label>
+                    <input type="text" class="form-control" id="caracteristica" formControlName="caracteristica">
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-6 col-md-4 mb-4">
+                    <div class="row g-0 text-center">
+                        <label class="form-label m-0">Ofensivo</label>
+                    </div>
+                    <div class="row g-0">
+                        <ngb-rating formControlName="ofensivo" (rateChange)="onRateChange()" [max]="6" class="justify-content-center p-0 m-0">
+                            <ng-template let-fill="fill" let-index="index">
+                                <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                            </ng-template>
+                        </ngb-rating>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 mb-4">
+                    <div class="row g-0 text-center">
+                        <label class="form-label m-0">Defensivo</label>
+                    </div>
+                    <div class="row g-0">
+                        <ngb-rating formControlName="defensivo" (rateChange)="onRateChange()" [max]="6" class="justify-content-center p-0 m-0">
+                            <ng-template let-fill="fill" let-index="index">
+                                <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                            </ng-template>
+                        </ngb-rating>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 mb-4">
+                    <div class="row g-0 text-center">
+                        <label class="form-label m-0">Sinergia</label>
+                    </div>
+                    <div class="row g-0">
+                        <ngb-rating formControlName="sinergia" (rateChange)="onRateChange()" [max]="6" class="justify-content-center p-0 m-0">
+                            <ng-template let-fill="fill" let-index="index">
+                                <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                            </ng-template>
+                        </ngb-rating>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="row g-0 text-center">
+                        <label class="form-label m-0">Estratégia</label>
+                    </div>
+                    <div class="row g-0">
+                        <ngb-rating formControlName="estrategia" (rateChange)="onRateChange()" [max]="6" class="justify-content-center p-0 m-0">
+                            <ng-template let-fill="fill" let-index="index">
+                                <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                            </ng-template>
+                        </ngb-rating>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="row g-0 text-center">
+                        <label class="form-label m-0">Combate Aéreo</label>
+                    </div>
+                    <div class="row g-0">
+                        <ngb-rating formControlName="caereo" (rateChange)="onRateChange()" [max]="6" class="justify-content-center p-0 m-0">
+                            <ng-template let-fill="fill" let-index="index">
+                                <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                            </ng-template>
+                        </ngb-rating>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="row g-0 text-center">
+                        <label class="form-label m-0">Técnico</label>
+                    </div>
+                    <div class="row g-0">
+                        <ngb-rating formControlName="tecnico" (rateChange)="onRateChange()" [max]="6" class="justify-content-center p-0 m-0">
+                            <ng-template let-fill="fill" let-index="index">
+                                <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                            </ng-template>
+                        </ngb-rating>
+                    </div>
+                </div>
+            </div>
         </div>
-        <span class="badge bg-primary rounded-pill">{{team.overall}}</span>
-    </a>
-</ol>
+    </div>
+    <div class="modal-footer">
+        <div class="col me-auto">
+            <label class="form-label m-0 me-2">Estrelas: </label>
+            <ng-template #t let-fill="fill">
+              <span class="star-total" [class.full]="fill === 100">
+                <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+              </span>
+            </ng-template>
+            <ngb-rating [(rate)]="team.stars" [starTemplate]="t" [readonly]="true" [max]="6"></ngb-rating>
+        </div>
+        <button type="submit" class="btn btn-outline-light">Salvar</button>
+    </div>
+</form>

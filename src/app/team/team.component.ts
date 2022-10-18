@@ -9,15 +9,11 @@ import {TeamService} from './team.service';
     providers: [TeamService]
 })
 export class TeamComponent implements OnInit {
-    teamSelected: Team;
 
-    constructor(private teamService: TeamService) {
+    constructor() {
     }
 
     ngOnInit(): void {
-        this.teamService.TeamSelected.subscribe(
-            (team: Team) => this.teamSelected = team
-        );
     }
 
 }

@@ -3,11 +3,13 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {HomeComponent} from "./home/home.component";
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {PlayerComponent} from './player/player.component';
 import {PlayerDetailModalComponent} from './player/player-detail/player-detail.component';
 import {PlayerDialogModalComponent} from './player/player-dialog/player-dialog.component';
-import {PlayerComponent} from './player/player.component';
 import {RankingComponent} from './ranking/ranking.component';
 import {TeamComponent} from './team/team.component';
+import {TeamDialogModalComponent} from "./team/team-dialog/team-dialog.component";
+import {TeamDetailModalComponent} from "./team/team-detail/team-detail.component";
 
 const routes: Routes = [
     // canActivate: [AuthGuard] canActivateChild: [AuthGuard]
@@ -19,6 +21,9 @@ const routes: Routes = [
     {path: 'player/update/:id', component: PlayerDialogModalComponent, outlet: 'popup'},
     {path: 'player/detail/:id', component: PlayerDetailModalComponent, outlet: 'popup'},
     {path: 'teams', component: TeamComponent},
+    {path: 'team/create', component: TeamDialogModalComponent, outlet: 'popup'},
+    {path: 'team/update/:id', component: TeamDialogModalComponent, outlet: 'popup'},
+    {path: 'team/detail/:id', component: TeamDetailModalComponent, outlet: 'popup'},
     {path: 'not-found', component: PageNotFoundComponent},
     {path: '**', redirectTo: '/not-found'}
 ];

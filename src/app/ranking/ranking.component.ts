@@ -10,7 +10,7 @@ import {faSort, faSortUp, faSortDown, faEye, faSpinner} from '@fortawesome/free-
 })
 export class RankingComponent implements OnInit {
     players: Player[];
-    predicate = 'overall';
+    predicate = 'score';
     reverse = false;
     faSort = faSort;
     faSortUp = faSortUp;
@@ -57,7 +57,6 @@ export class RankingComponent implements OnInit {
     }
 
     getAllPlayersfilter() {
-        console.log("filter");
         this.loading = false;
         this.playerService.getPlayersListFilter({
             sort: this.sort(),

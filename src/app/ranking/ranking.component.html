@@ -39,6 +39,12 @@
                     <fa-icon *ngIf="predicate == 'nome' && !reverse" [icon]="faSortDown" size="xs"></fa-icon>
                 </th>
                 <th scope="col" class="text-center" colspan="2">Classes</th>
+                <th scope="col" class="text-center" [class.filter]="predicate == 'score'">
+                    <span (click)="updateFilter('score')">Score </span>
+                    <fa-icon *ngIf="predicate != 'score'" [icon]="faSort" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'score' && reverse" [icon]="faSortUp" size="xs"></fa-icon>
+                    <fa-icon *ngIf="predicate == 'score' && !reverse" [icon]="faSortDown" size="xs"></fa-icon>
+                </th>
                 <th scope="col" class="text-center" [class.filter]="predicate == 'forca'">
                     <span (click)="updateFilter('forca')">For </span>
                     <fa-icon *ngIf="predicate != 'forca'" [icon]="faSort" size="xs"></fa-icon>
@@ -129,6 +135,16 @@
                          style="width: 24px;" class="mx-auto d-block"></td>
                 <td><img *ngIf="player.classeTwo" [src]="'/assets/img/' + player.classeTwo + '.png'"
                          style="width: 24px;" class="mx-auto d-block"></td>
+                <td><span *ngIf="player.score"
+                          [class.atrib-c]="player.score < 6.0"
+                          [class.atrib-b]="player.score >= 6.0 && player.score < 7.0"
+                          [class.atrib-a]="player.score >= 7.0 && player.score < 8.0"
+                          [class.atrib-s]="player.score >= 8.0 && player.score < 9.0"
+                          [class.atrib-ss]="player.score >= 9.0 && player.score < 10.0"
+                          [class.atrib-mitica]="player.score >= 10.0" class="d-flex justify-content-center">
+                        {{player.score}}
+                    </span>
+                </td>
                 <td><span *ngIf="player.forca"
                           [class.atrib-c]="player.forca < 60"
                           [class.atrib-b]="player.forca >= 60 && player.forca < 70"

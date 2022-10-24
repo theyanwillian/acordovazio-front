@@ -23,6 +23,7 @@ export class PlayerDialogComponent implements OnInit {
         this.player = this.player || new Player();
         this.createPlayerForm = new FormGroup({
             'nome': new FormControl('', Validators.required),
+            'score': new FormControl(null),
             'overall': new FormControl(null, Validators.required),
             'idade': new FormControl(null, Validators.required),
             'peso': new FormControl(null, Validators.required),

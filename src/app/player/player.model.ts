@@ -2,6 +2,7 @@ export class Player {
     constructor(
         public id?: number,
         public nome?: string,
+        public score?: number,
         public overall?: number,
         public idade?: number,
         public altura?: number,

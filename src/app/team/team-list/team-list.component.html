@@ -1,7 +1,8 @@
 <div class="row">
     <div class="col-12 d-flex justify-content-between">
         <h2>Teams</h2>
-        <button type="button" class="btn btn-success" [routerLink]="['/', { outlets: { popup: 'team/create'} }]">
+        <button type="button" class="btn btn-success" [routerLink]="['/', { outlets: { popup: 'team/create'} }]"
+                *isLogado="'ADMIN'">
             New Team
         </button>
     </div>
@@ -10,15 +11,21 @@
     <div class="col-6 mb-3" *ngFor="let team of teams; let i = index">
         <div class="card">
             <div class="card-body">
-                <div class="row mb-2">
-                    <div class="col">
-                        <h4 class="modal-title fw-bold">{{team.name}}</h4>
+                <div class="col d-flex justify-content-between">
+                    <h4 class="modal-title fw-bold">{{team.nome}}</h4>
+                    <div>
+                        {{team.stars}}
+                        <ng-template #t let-fill="fill">
+                          <span class="star-total" [class.full]="fill === 100">
+                            <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                          </span>
+                        </ng-template>
+                        <ngb-rating [(rate)]="team.stars" [starTemplate]="t" [readonly]="true" [max]="6"></ngb-rating>
                     </div>
                 </div>
-                <p class="card-text">Coach: {{team.coach}}</p>
                 <div class="row mt-1">
                     <div class="d-flex justify-content-end py-0">
-                        <button class="btn btn-sm btn-primary me-1">
+                        <button class="btn btn-sm btn-primary me-1" [routerLink]="['/', { outlets: { popup: 'team/detail/'+ team.id} }]">
                             <fa-icon [icon]="faEye"></fa-icon>
                         </button>
                         <button class="btn btn-sm btn-primary">

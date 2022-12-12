@@ -129,3 +129,8 @@ label {
 th, td {
     white-space: nowrap !important;
 }
+
+.popover-class {
+    --bs-popover-bg: #323636;
+    --bs-popover-body-color: white;
+}

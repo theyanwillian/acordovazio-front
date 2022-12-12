@@ -1,4 +1,4 @@
-<div class="row my-2">
+<div class="row mb-3">
     <div class="col-12 col-md-3 align-self-center">
         <h2>Ranking</h2>
     </div>
@@ -18,15 +18,15 @@
     <div class="col-12 col-md-3">
         <div class="form-group">
             <label for="buscaClasse1"><i class="fa fa-search"></i> Filtrar por Classe</label>
-            <select id="buscaClasse1" (change)="getAllPlayersfilter()" class="form-select" [(ngModel)]="filterClasse">
-                <option value="" selected>Classes</option>
+            <select id="buscaClasse1" (change)="getAllPlayersFilter()" class="form-select" [(ngModel)]="filterClasse">
+                <option value="" selected>Todas</option>
                 <option value="{{classe}}" *ngFor="let classe of classes"
                         class="form-control">{{classe}}</option>
             </select>
         </div>
     </div>
 </div>
-<div class="row">
+<div class="row mt-2">
     <div class="table-responsive">
         <table class="table table-hover table-dark">
             <thead>
@@ -131,10 +131,17 @@
             <tr *ngFor="let player of players; let i = index">
                 <th scope="row">{{i + 1}}º</th>
                 <td>{{player.nome}}</td>
-                <td><img *ngIf="player.classeOne" [src]="'/assets/img/' + player.classeOne + '.png'"
-                         style="width: 24px;" class="mx-auto d-block"></td>
-                <td><img *ngIf="player.classeTwo" [src]="'/assets/img/' + player.classeTwo + '.png'"
-                         style="width: 24px;" class="mx-auto d-block"></td>
+                <td [colSpan]="player.classeTwo != 'false' ? 1 : 2">
+                    <img *ngIf="player.classeOne" [src]="'/assets/img/' + player.classeOne + '.png'" style="width: 24px;" class="mx-auto d-block"
+                         ngbPopover="{{player.classeOne}}"
+                         triggers="mouseenter:mouseleave" popoverClass="popover-class">
+                </td>
+                <td *ngIf="player.classeTwo != 'false'">
+                    <img *ngIf="player.classeTwo" [src]="'/assets/img/' + player.classeTwo + '.png'"
+                         style="width: 24px;" class="mx-auto d-block"
+                         ngbPopover="{{player.classeTwo}}"
+                         triggers="mouseenter:mouseleave" popoverClass="popover-class">
+                </td>
                 <td><span *ngIf="player.score"
                           [class.atrib-c]="player.score < 6.0"
                           [class.atrib-b]="player.score >= 6.0 && player.score < 7.0"
@@ -265,12 +272,7 @@
                 <td>
                     <button type="button" class="btn btn-outline-success mx-auto d-block"
                             [routerLink]="['/', { outlets: { popup: 'player/detail/'+ player.id} }]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                             class="bi bi-eye-fill" viewBox="0 0 16 16">
-                            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
-                            <path
-                                d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
-                        </svg>
+                        <i class="bi bi-eye-fill"></i>
                     </button>
                 </td>
             </tr>

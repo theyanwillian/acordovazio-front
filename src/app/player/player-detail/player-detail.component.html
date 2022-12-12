@@ -20,11 +20,6 @@
     <div class="modal-body">
         <div class="container">
             <div class="row mb-3">
-                <div class="col-12 d-flex justify-content-center">
-                    <img src="assets/player/muramassa.jpeg" class="img-fluid img-player">
-                </div>
-            </div>
-            <div class="row mb-2">
                 <div class="col-12 d-flex justify-content-around">
                     <h5>Idade: {{player.idade}}</h5>
                     <h5>Peso: {{player.peso}}</h5>
@@ -32,7 +27,7 @@
                 </div>
             </div>
             <div class="row mb-3">
-                <div class="col-6">
+                <div class="col">
                     <div class="row">
                         <div class="col d-flex justify-content-center">
                             <img [src]="'/assets/img/' + player.classeOne + '.png'" class="img-fluid">
@@ -44,7 +39,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col" *ngIf="player.classeTwo != 'false'">
                     <div class="row">
                         <div class="col d-flex justify-content-center">
                             <img [src]="'/assets/img/' + player.classeTwo + '.png'" class="img-fluid">

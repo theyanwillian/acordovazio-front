@@ -29,15 +29,7 @@ export class RankingComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.getAllPlayers();
-    }
-
-    getAllPlayers() {
-        this.playerService.getPlayersList({
-            sort: this.sort()
-        }).subscribe(data => {
-            this.players = data;
-        });
+        this.getAllPlayersFilter();
     }
 
     sort() {
@@ -48,15 +40,15 @@ export class RankingComponent implements OnInit {
     updateFilter(predicate: string) {
         if (predicate === this.predicate) {
             this.reverse = !this.reverse;
-            this.getAllPlayers();
+            this.getAllPlayersFilter();
         } else {
             this.predicate = predicate;
             this.reverse = false;
-            this.getAllPlayers();
+            this.getAllPlayersFilter();
         }
     }
 
-    getAllPlayersfilter() {
+    getAllPlayersFilter() {
         this.loading = false;
         this.playerService.getPlayersListFilter({
             sort: this.sort(),
@@ -71,7 +63,7 @@ export class RankingComponent implements OnInit {
         this.loading = true;
         this.cancelTimeout();
         this.currentTimeout = setTimeout(() => {
-            this.getAllPlayersfilter();
+            this.getAllPlayersFilter();
         }, 2000);
     }
 

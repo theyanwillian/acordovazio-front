@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
-import {HttpClientModule} from "@angular/common/http";
-import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {NgbModule, NgbPopoverModule} from "@ng-bootstrap/ng-bootstrap";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 import {AppComponent} from './app.component';
@@ -24,10 +24,16 @@ import {TeamDetailComponent} from "./team/team-detail/team-detail.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {TeamService} from "./team/team.service";
 import {PlayerService} from "./player/player.service";
+import {AuthComponent} from "./auth/auth.component";
+import {LoadingSpinnerComponent} from "./shared/loading-spinner/loading-spinner.component";
+import {AuthInterceptorService} from "./auth/auth-interceptor.service";
+import {AlertComponent} from "./shared/alert/alert.component";
+import {IsLogadoDirective} from "./auth/is-logado.directive";
 
 @NgModule({
     declarations: [
         AppComponent,
+        AuthComponent,
         HomeComponent,
         NavbarTopComponent,
         FooterComponent,
@@ -44,7 +50,10 @@ import {PlayerService} from "./player/player.service";
         RankingComponent,
         HistoryComponent,
         RegionComponent,
-        PageNotFoundComponent
+        PageNotFoundComponent,
+        LoadingSpinnerComponent,
+        AlertComponent,
+        IsLogadoDirective
     ],
     imports: [
         BrowserModule,
@@ -53,11 +62,14 @@ import {PlayerService} from "./player/player.service";
         NgbModule,
         ReactiveFormsModule,
         FontAwesomeModule,
-        FormsModule
+        FormsModule,
+        NgbPopoverModule
     ],
+    exports: [IsLogadoDirective],
     providers: [
         TeamService,
-        PlayerService
+        PlayerService,
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
     ],
     bootstrap: [AppComponent]
 })

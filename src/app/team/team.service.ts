@@ -4,7 +4,7 @@ import {Observable, Subject} from 'rxjs';
 import {Team} from './team.model';
 import {environment} from "../../environments/environment";
 
-import {createRequestOption} from '../shared/model/request-util';
+import {createRequestOption} from '../shared/request-util';
 
 @Injectable({
     providedIn: 'root'

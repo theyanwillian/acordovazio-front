@@ -75,7 +75,7 @@ export class TeamDialogComponent implements OnInit {
 
     private initTeamForm() {
         this.teamForm = new FormGroup({
-            'name': new FormControl('', Validators.required),
+            'nome': new FormControl('', Validators.required),
             'coach': new FormControl(null, Validators.required),
             'overall': new FormControl(null, Validators.required),
             'caracteristica': new FormControl(null, Validators.required),

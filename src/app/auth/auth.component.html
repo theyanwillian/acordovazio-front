@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div *ngIf="isLoading">
+        <app-loading-spinner></app-loading-spinner>
+    </div>
+    <div class="col-md-3">
+        <div class="text-center">
+            <h2>{{ isLoginMode ? 'Fazer Login' : 'Inscrever-se' }}</h2>
+        </div>
+        <app-alert *ngIf="error" [alertMsg]="error" (close)="onHandlerError()"></app-alert>
+        <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+            <div class="form-group mb-2">
+                <label for="email">E-Mail</label>
+                <input
+                    type="email"
+                    id="email"
+                    class="form-control"
+                    ngModel
+                    name="email"
+                    required
+                    email
+                />
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    class="form-control"
+                    ngModel
+                    name="password"
+                    required
+                    minlength="6"
+                />
+            </div>
+            <div class="d-grid gap-2 mt-3">
+                <button class="btn btn-primary" type="submit" [disabled]="!authForm.valid">{{ isLoginMode ? 'Login' : 'Inscrever-se' }}</button>
+                <button class="btn btn-outline-primary" type="button" (click)="onSwitchMode()">Trocar para {{ isLoginMode ? 'Inscrever-se' : 'Login' }}</button>
+            </div>
+        </form>
+    </div>
+</div>

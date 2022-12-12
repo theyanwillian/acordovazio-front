@@ -1,0 +1,26 @@
+
+
+.star {
+    font-size: 1.4rem;
+    color: #F2F2F2;
+}
+.filled {
+    color: #ffe11e;
+}
+
+
+.star-total {
+    position: relative;
+    display: inline-block;
+    font-size: 1.4rem;
+    color: #F2F2F2;
+}
+.full {
+    color: #ffe11e;
+}
+.half {
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    color: #ffe11e;
+}

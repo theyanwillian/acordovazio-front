@@ -1,0 +1,11 @@
+<div class="alert alert-{{ alertStatus }} alert-dismissible fade show position-fixed alert-box" role="alert">
+    <div class="row">
+        <div class="col-2 d-flex align-items-center">
+            <span><i class="bi bi-exclamation-triangle-fill"></i></span>
+        </div>
+        <div class="col-9 p-0 text-justify pl-2">
+            {{ alertMsg }}
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="closeAlert()"></button>
+    </div>
+</div>

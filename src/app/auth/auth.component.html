@@ -1,8 +1,8 @@
 <div class="row justify-content-center">
-    <div *ngIf="isLoading">
+    <div class="col-md-3 d-flex justify-content-center" *ngIf="isLoading">
         <app-loading-spinner></app-loading-spinner>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3" *ngIf="!isLoading">
         <div class="text-center">
             <h2>{{ isLoginMode ? 'Fazer Login' : 'Inscrever-se' }}</h2>
         </div>

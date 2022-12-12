@@ -28,13 +28,13 @@
                 <div class="row mt-1">
                     <div class="d-flex justify-content-end py-0">
                         <button class="btn btn-sm btn-primary me-1" [routerLink]="['/', { outlets: { popup: 'player/detail/'+ player.id} }]">
-                            <fa-icon [icon]="faEye"></fa-icon>
+                            <i class="bi bi-eye-fill"></i>
                         </button>
                         <button class="btn btn-sm btn-primary me-1" [routerLink]="['/', { outlets: { popup: 'player/update/'+ player.id} }]" *isLogado="'ADMIN'">
-                            <fa-icon [icon]="faPenToSquare"></fa-icon>
+                            <i class="bi bi-pen-fill"></i>
                         </button>
                         <button class="btn btn-sm btn-primary" (click)="deletePlayer(player.id)" *isLogado="'ADMIN'">
-                            <fa-icon [icon]="faTrash"></fa-icon>
+                            <i class="bi bi-trash-fill"></i>
                         </button>
                     </div>
                 </div>

@@ -26,9 +26,9 @@
                 <div class="row mt-1">
                     <div class="d-flex justify-content-end py-0">
                         <button class="btn btn-sm btn-primary me-1" [routerLink]="['/', { outlets: { popup: 'team/detail/'+ team.id} }]">
-                            <fa-icon [icon]="faEye"></fa-icon>
+                            <i class="bi bi-eye-fill"></i>
                         </button>
-                        <button class="btn btn-sm btn-primary">
+                        <button class="btn btn-sm btn-primary me-1" [routerLink]="['/', { outlets: { popup: 'team/update/'+ team.id} }]" *isLogado="'ADMIN'">
                             <fa-icon [icon]="faPenToSquare"></fa-icon>
                         </button>
                     </div>

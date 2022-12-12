@@ -105,14 +105,12 @@ export class TeamDialogModalComponent implements OnDestroy {
     ngOnInit() {
         this.routeSub = this.route.params.subscribe((params) => {
             if (params['id']) {
-                console.log('tem Params', params['id']);
                 this.teamService.getTeamById(params['id']).subscribe((data) => {
                     this.modalRef = this.modalService.open(TeamDialogComponent as Component);
                     this.modalRef.componentInstance.team = data;
                     this.result();
                 });
             } else {
-                console.log('sem Params');
                 this.modalRef = this.modalService.open(TeamDialogComponent as Component);
                 this.result();
             }

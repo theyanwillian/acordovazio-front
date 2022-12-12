@@ -25,10 +25,10 @@ export class AlertComponent {
     }
 
     ngOnInit(): void {
-        // clearTimeout(this.currentTimeout);
-        // this.currentTimeout = setTimeout(() => {
-        //     this.close.emit();
-        // }, 5000);
+        clearTimeout(this.currentTimeout);
+        this.currentTimeout = setTimeout(() => {
+            this.close.emit();
+        }, 5000);
     }
 
     closeAlert() {
